@@ -3,6 +3,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f5f7fb;
 }
+
 /* logo styles */
 .navbar {
   display: flex;
@@ -11,7 +12,6 @@ body {
   background-color: #fff;
   height: 71px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  
 }
 
 .logo {
@@ -50,7 +50,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #d9534f;
+  color: orange;
 }
 
 .cart {
@@ -58,70 +58,113 @@ body {
   align-items: center;
   gap: 6px;
   font-weight: 500;
- color: #333;
+  color: #333;
 }
-.cart:hover{
-    color: #d9534f;
-    cursor: pointer;
-}
-/* banner styles */
 
+.cart:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+/* banner styles */
 .banner {
-    width: 1140px;
-    height: 461px;
-    background-color: #f0f5ff;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
+  width: 1400px;
+  height: 461px;
+  background-color: #f0f5ff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .banner-text {
-    z-index: 1;
-    padding-top: 173px; /* Adjusted to match the vertical position in the image */
-    padding-left: 20px;
+  z-index: 1;
+  padding-top: 173px;
+  padding-left: 20px;
 }
 
 .banner-text h1 {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1;
 }
 
 .banner-text h1 span {
-    color: #ff6200;
+  color: purple;
 }
 
 .banner-text p {
-    font-size: 1.2em;
-    color: #666;
-    max-width: 400px;
-    margin-top: 10px;
+  font-size: 1.2em;
+  color: #666;
+  max-width: 400px;
+  margin-top: 10px;
 }
 
 .banner-image-one {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    background: url('/assets/hero-flower.png') no-repeat right;
-    background-size: cover;
-    opacity: 0.8;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: url('/assets/hero-flower.png') no-repeat right;
+  background-size: cover;
+  opacity: 0.8;
 }
-/* .hovers:hover{
-  color:salmon;
-} */
- .hovers span {
-  transition: all 0.3s ease;
+
+.hovers span {
+  /* display: inline-block;
+  transition: transform 0.6s ease; */
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
+
 .hovers span:hover {
-  color: purple;
+  color: orange;
   transform: scale(1.1);
   cursor: pointer;
+  /* transform: rotate(360deg); */
+  transform: translateY(-10px);
+}
+
+/* join section styles */
+.btn-primary {
+  background-color: #fd6e0a;
+  color: #fff;
+  padding: 18px 35px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  height: 19px;
+  width: 186px;
+}
+
+.box {
+  width: 644px;
+  height: 50px;
+}
+
+.alignment {
+  display: flex;
+  width: 830px;
+}
+
+.join {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('../assets/news-letter-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }

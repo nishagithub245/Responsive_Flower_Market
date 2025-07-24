@@ -3,7 +3,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f5f7fb;
 }
-
+/* logo styles */
 .navbar {
   display: flex;
   align-items: center;
@@ -62,4 +62,66 @@ body {
 }
 .cart:hover{
     color: #d9534f;
+    cursor: pointer;
+}
+/* banner styles */
+
+.banner {
+    width: 1140px;
+    height: 461px;
+    background-color: #f0f5ff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.banner-text {
+    z-index: 1;
+    padding-top: 173px; /* Adjusted to match the vertical position in the image */
+    padding-left: 20px;
+}
+
+.banner-text h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+}
+
+.banner-text h1 span {
+    color: #ff6200;
+}
+
+.banner-text p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+.banner-image-one {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: url('/assets/hero-flower.png') no-repeat right;
+    background-size: cover;
+    opacity: 0.8;
+}
+/* .hovers:hover{
+  color:salmon;
+} */
+ .hovers span {
+  transition: all 0.3s ease;
+}
+.hovers span:hover {
+  color: purple;
+  transform: scale(1.1);
+  cursor: pointer;
 }

@@ -1,327 +1,355 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f7fb;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fb;
 }
 
-/* logo styles */
+/* Navbar styles - Mobile-first approach */
 .navbar {
-  display: flex;
-  align-items: center;
-  padding: 20px 150px;
-  background-color: #fff;
-  height: 71px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 15px 20px; /* Padding for mobile */
+    background-color: #fff;
+    height: 71px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    justify-content: space-between; /* Distributes logo to left, cart to right */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
-  height: 70px;
-  width: 60px;
+    height: 50px; /* Slightly smaller logo for mobile */
+    width: 50px;
+    border-radius: 8px; /* Rounded corners for logo */
 }
 
 .logo span {
-  font-size: 24px;
-  color: #d9534f;
-  font-weight: bold;
+    font-size: 20px; /* Adjusted font size for mobile */
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Nav links are hidden by default on mobile */
+.nav-links {
+    display: none; /* Hidden on small screens */
 }
 
 .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin-left: auto; /* Pushes nav to right */
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: orange;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Gap between cart and other elements (if any on mobile) */
 }
 
 .cart {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
-  color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    color: #333;
+    padding: 8px 12px; /* Add some padding to cart */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .cart:hover {
-  color: orange;
-  cursor: pointer;
+    color: orange;
+    cursor: pointer;
+    background-color: #f0f0f0;
 }
 
-/* banner styles */
+.cart-icon {
+    font-size: 20px; /* Make cart icon slightly larger */
+}
+
+/* Media query for medium screens (768px and up) */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 20px 150px; /* Original padding for larger screens */
+        justify-content: flex-start; /* Align items to the start for desktop */
+    }
+
+    .logo img {
+        height: 70px; /* Original logo size */
+        width: 60px;
+    }
+
+    .logo span {
+        font-size: 24px; /* Original font size */
+    }
+
+    .nav-right {
+        gap: 25px; /* Original gap */
+        margin-left: auto; /* Pushes nav-right to the far right on desktop */
+    }
+
+    /* Navigation links are displayed on larger screens */
+    .nav-links {
+        display: flex; /* Show on larger screens */
+        flex-direction: row; /* Horizontal layout */
+        gap: 20px; /* Gap between desktop links */
+        margin-left: auto; /* Pushes nav links to the right of logo */
+        margin-right: 25px; /* Space before cart */
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        padding: 0; /* No padding for desktop links */
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: orange;
+    }
+
+    .cart span {
+        font-size: initial; /* Original font size for cart text */
+    }
+}
+
+/* Banner styles */
 .banner {
-  width: 1400px;
-  height: 461px;
-  background-color: #f0f5ff;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
+    width: 100%; /* Make it fluid */
+    max-width: 1400px; /* Max width for larger screens */
+    height: auto; /* Allow height to adjust */
+    background-color: #f0f5ff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    flex-direction: row; /* Default to row for larger screens */
 }
 
 .banner-text {
-  z-index: 1;
-  padding-top: 173px;
-  padding-left: 20px;
+    z-index: 1;
+    padding-top: 173px;
+    padding-left: 20px;
 }
 
 .banner-text h1 {
-  font-size: 3em;
-  font-weight: bold;
-  margin: 0;
-  line-height: 1;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
 }
 
 .banner-text h1 span {
-  color: purple;
+    color: purple;
 }
 
 .banner-text p {
-  font-size: 1.2em;
-  color: #666;
-  max-width: 400px;
-  margin-top: 10px;
+    font-size: 1.2em;
+    color: #666;
+    max-width: 400px;
+    margin-top: 10px;
+    font-family:'Noto Serif'
 }
 
 .banner-image-one {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  background: url('/assets/hero-flower.png') no-repeat right;
-  background-size: cover;
-  opacity: 0.8;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: url('/assets/hero-flower.png') no-repeat right; /* Ensure this path is correct */
+    background-size: cover;
+    opacity: 0.8;
 }
 
 .hovers span {
-  /* display: inline-block;
-  transition: transform 0.6s ease; */
-  display: inline-block;
-  transition: transform 0.3s ease;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 .hovers span:hover {
-  color: orange;
-  transform: scale(1.1);
-  cursor: pointer;
-  /* transform: rotate(360deg); */
-  transform: translateY(-10px);
+    color: orange;
+    transform: scale(1.1);
+    cursor: pointer;
+    transform: translateY(-10px);
 }
 
+/* Feature Section Styles */
+.feature-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    margin-top: 50px; /* Adjusted margin-top to avoid large gap */
+}
 
-/* plants section */
+.image-container {
+    position: relative;
+    width: 100%; /* Make it fluid for responsiveness */
+    max-width: 600px; /* Max width for larger screens */
+    height: auto;
+    flex-shrink: 0;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.badge {
+    position: absolute;
+    top: -60px; /* Adjusted for better mobile positioning */
+    right: -60px; /* Adjusted for better mobile positioning */
+    width: 180px; /* Adjusted for mobile responsiveness */
+    z-index: 2;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+    z-index: 1;
+    border-radius: 6px;
+}
+
+/* Corrected selector for infinite spin on hover */
+.badge.none3:hover {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.text-content {
+    max-width: 550px;
+    color: black;
+    font-weight: bold;
+    margin-left: 0; /* Remove fixed margin-left for responsiveness */
+    margin-top: 30px; /* Adjusted margin-top for better spacing on mobile */
+    text-align: center; /* Center text on mobile */
+}
+
+.text-content h2 {
+    font-size: 2.5rem; /* Adjusted for mobile */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-content ul {
+    padding-left: 20px; /* Adjusted padding for mobile */
+    margin-bottom: 30px; /* Adjusted margin for mobile */
+    text-align: left; /* Align list items to left */
+    display: inline-block; /* Helps center the ul block */
+}
+
+.text-content li {
+    margin-bottom: 10px; /* Adjusted for mobile */
+    color: #00000080;
+    line-height: 1.5;
+    list-style-type: disc;
+    font-size: 18px; /* Adjusted for mobile */
+}
+
 /* SECTION: Our Plants */
-
 .plant-section {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  background-color: #f2f2f2;
-  text-align: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
 }
 
 .plant-section h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .plant-section h2 span {
-  color: #f15a24; /* Orange color for 'Our' */
+    color: #f15a24; /* Orange color for 'Our' */
 }
 
 .plant-section .description {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 1rem;
-  color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1rem;
+    color: #666;
 }
 
 /* GRID SETUP */
 .plant-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px 49px; /* vertical 30px, horizontal 49px */
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 columns on desktop */
+    gap: 30px 49px; /* vertical 30px, horizontal 49px */
+    justify-items: center;
+    padding: 0 20px; /* Add some padding to the grid container */
 }
 
 /* CARD STYLE */
 .plant-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 16px 10px;
-  width: 100%;
-  max-width: 250px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px 10px;
+    width: 100%; /* Ensure it takes full width of its grid cell */
+    max-width: 250px; /* Max width for individual card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .plant-card img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 4px;
 }
 
 .plant-card h3 {
-  margin: 12px 0 6px;
-  font-size: 1.1rem;
-  color: #222;
+    margin: 12px 0 6px;
+    font-size: 1.1rem;
+    color: #222;
 }
 
 .plant-card .price {
-  font-weight: bold;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  color: #111;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #111;
 }
 
 .plant-card button {
-  background-color: #f15a24;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
+    background-color: #f15a24;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 .plant-card button:hover {
-  background-color: orange;
+    background-color: orange;
 }
 
-/* RESPONSIVE GRID */
-@media (max-width: 1024px) {
-  .plant-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .plant-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-
-/* banner section with logo */
-/* Hero Section Background */
-.hero-banner {
-  background-color: #f4f4f4;
-  padding: 80px 20px 60px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Flex Container */
-.banner-container {
-  display: flex;
-  max-width: 1140px;
-  width: 100%;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
-  height: 600px; /* Keeps image and text same height */
-}
-
-/* Left Side: Banner Image */
-.banner-image {
-  position: relative;
-  flex: 1;
-  overflow: hidden;
-}
-
-.banner-image img:first-child {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Badge Styling */
-.banner-image .badge {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 130px;
-  height: auto;
-  z-index: 10;
-}
-
-/* Right Side: Text Content */
-.banner-content {
-  flex: 1;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #fff;
-  font-family: 'Noto Serif', serif; /* Apply Noto Serif only here */
-}
-
-.banner-content h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.banner-content ul {
-  list-style: disc;
-  padding-left: 20px;
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.banner-content li {
-  margin-bottom: 15px;
-}
-/* General Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-
-/* latest deal styles */
-.deals-container {
-    gap: 20px;
-}
-
+/* latest deal */
 .latest-deals {
     background-color: #f9f9f9;
     padding: 60px 20px;
@@ -357,28 +385,33 @@ body {
     line-height: 1.5;
     max-width: 700px;
     margin: 0 auto;
+    font-family:'Noto Serif'
 }
 
 .deals-container {
-    display: flex;
+    display: flex; /* Keep as flex for stacking */
+    flex-direction: column; /* Stack vertically by default */
     gap: 20px;
     max-width: 1140px;
     margin: auto;
     justify-content: center;
-    align-items: stretch;
+    align-items: center; /* Center items horizontally when stacked */
+    padding: 0 20px; /* Add padding to the container */
 }
 
 .left-cards {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Keep as flex */
+    flex-direction: column; /* Stack its children vertically */
     gap: 20px;
+    width: 100%; /* Take full width of parent */
+    max-width: 350px; /* Limit max width for individual card groups */
 }
 
 .deal-card {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    height: 200px;
+    width: 100%; /* Take full width of its parent (.left-cards or .deals-container) */
+    height: 200px; /* Consistent height for all deal cards */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -395,8 +428,18 @@ body {
 }
 
 .featured-deal {
-    width: 600px;
-    height: 420px;
+    width: 100%; /* Take full width of parent */
+    height: 200px; /* Consistent height with other deal cards */
+    max-width: 350px; /* Limit max width to match other cards visually */
+    border-radius: 10px; /* Apply border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Apply shadow */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .discount-text {
@@ -405,22 +448,23 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
     white-space: nowrap;
+    font-family:'Noto Serif'
 }
 
 .featured-deal .discount-text {
-    font-size: 2.2em;
+    font-size: 1.8em; /* Adjusted for consistency on mobile */
 }
 
 .shop-link {
     font-size: 1em;
-    text-decoration: underline; 
-    color: white; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-    cursor: pointer; 
+    text-decoration: underline;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .featured-deal .shop-link {
-    font-size: 1.3em; 
+    font-size: 1.1em;
 }
 
 /* Optional: Add a subtle overlay to images for better text contrast */
@@ -438,54 +482,561 @@ body {
 
 .featured-deal::before {
     background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px; /* Ensure overlay also has border-radius */
 }
-
-
-
-
 
 /* join section styles */
 .btn-primary {
-  background-color: #fd6e0a;
-  color: #fff;
-  padding: 18px 35px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-  height: 50px;
-  width: 186px;
+    background-color: #fd6e0a;
+    color: #fff;
+    padding: 18px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 186px;
+    border-radius: 5px; /* Added border-radius */
 }
 
 .box {
-  width: 644px;
-  height: 50px;
-  border-color:2px solid#f15a24;
+    width: 644px;
+    height: 50px;
+    border: 2px solid #f15a24; /* Corrected border syntax */
+    border-radius: 5px; /* Added border-radius */
+    padding: 0 15px; /* Added padding */
 }
 
 .alignment {
-  display: flex;
-  width: 830px;
+    display: flex;
+    width: 830px;
+    justify-content: center; /* Center items */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 10px; /* Gap between input and button */
 }
 
 .join {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-image: url('../assets/news-letter-bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../assets/news-letter-bg.png'); /* Ensure this path is correct */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 40px 20px; /* Adjusted padding */
+    height: 100vh; /* Keep for full height background */
 }
 
+/* Footer section */
+.footer-section {
+    padding: 60px 40px;
+    font-family: "Noto Serif", serif;
+    align-items: center;
+    margin: 0 auto;
+}
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1140px;
+    margin: auto;
+}
+.footer-container {
+    font-family:'Noto Serif'
+}
 
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 15px;
+}
 
+.footer-logo p {
+    max-width: 250px;
+    color: #00000080;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+}
 
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
 
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
+.footer-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: orange;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-social img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Media Queries */
+
+/* Banner Responsive */
+@media screen and (max-width: 767px) { /* Adjusting breakpoint for banner */
+    .banner {
+        flex-direction: column-reverse; /* Stack image then text for mobile */
+        height: auto; /* Auto height for stacked content */
+        padding: 20px;
+    }
+    .banner-text {
+        padding-top: 20px; /* Adjusted padding */
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .banner-text h1 {
+        font-size: 2.5em; /* Smaller font size */
+        margin: 0 auto 10px;
+    }
+    .banner-text p {
+        font-size: 1em; /* Smaller font size */
+        margin: 0 auto 20px;
+        max-width: 90%;
+    }
+    .banner-image-one {
+        position: static; /* Remove absolute positioning */
+        width: 100%;
+        height: 250px; /* Fixed height for mobile image */
+        background-position: center;
+        opacity: 1;
+    }
+    .none { /* If 'none' is used to hide elements on mobile */
+        display: none;
+    }
+}
+
+/* Plant section responsive for mobile */
+@media screen and (max-width: 576px) {
+    .plant-section h2,
+    .plant-section .description { /* Corrected class names */
+        margin-left: auto; /* Center text */
+        margin-right: auto;
+        text-align: center;
+        padding: 0 10px; /* Add some padding */
+    }
+    .plant-grid {
+        /* Changed to explicitly show 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Smaller gap for mobile */
+        padding: 0 5px; /* Reduced padding for more space */
+    }
+    .none2 {
+        display: none; /* Hide elements with 'none2' class on mobile */
+    }
+}
+
+/* Flower and Plant (Feature) section responsive */
+@media screen and (max-width: 767px) { /* Adjusted breakpoint for consistency */
+    .feature-section {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 30px 15px; /* Adjusted padding */
+        margin-top: 30px; /* Adjusted margin */
+        gap: 20px; /* Smaller gap */
+    }
+    .image-container {
+        width: 100%; /* Take full width */
+        max-width: 400px; /* Max width for image on mobile */
+        margin: 0 auto; /* Center image container */
+    }
+    .badge {
+        top: -40px; /* Adjusted position for smaller screens */
+        right: -40px;
+        width: 120px; /* Smaller badge size */
+    }
+    .none3 { /* If 'none3' is used to hide elements on mobile */
+        display: none;
+    }
+    .text-content {
+        width: 100%; /* Take full width */
+        margin-top: 20px; /* Adjusted margin */
+        text-align: center; /* Center text content */
+        padding: 0 10px; /* Add padding */
+    }
+    .text-content h2 {
+        font-size: 2rem; /* Smaller font for mobile */
+    }
+    .text-content ul {
+        padding-left: 20px; /* Adjusted padding */
+        margin-bottom: 20px;
+        text-align: left; /* Keep list items left-aligned */
+    }
+    .text-content li {
+        font-size: 16px; /* Smaller font for list items */
+    }
+}
+
+/* Deals responsive for mobile */
+@media screen and (max-width: 767px) { /* Adjusted breakpoint for consistency */
+    .latest-deals h1 {
+        font-size: 2.5em; /* Smaller font for mobile */
+        margin-left: auto; /* Center text */
+        margin-right: auto;
+        padding: 0 10px;
+    }
+    .subheader {
+        font-size: 0.9em;
+        padding: 0 15px;
+    }
+    .deals-container {
+        display: flex; /* Use flexbox for stacking */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Gap between stacked cards */
+        padding: 0 15px; /* Add horizontal padding to the container */
+    }
+    .left-cards {
+        display: flex; /* Keep as flex */
+        flex-direction: column; /* Stack its children vertically */
+        gap: 20px;
+        width: 100%; /* Take full width of parent */
+        max-width: 350px; /* Limit max width to match the single column look */
+    }
+    .deal-card {
+        width: 100%; /* Take full width of its parent (.left-cards or .deals-container) */
+        height: 180px; /* Consistent height for all deal cards */
+        max-width: none; /* Remove max-width constraint to allow shrinking */
+    }
+    .featured-deal {
+        width: 100%; /* Take full width of parent */
+        height: 180px; /* Consistent height with other deal cards */
+        max-width: 350px; /* Limit max width to match other cards visually */
+    }
+    .discount-text {
+        font-size: 1em;
+    }
+    .featured-deal .discount-text {
+        font-size: 1.8em; /* Adjusted for consistency on mobile */
+    }
+    .shop-link {
+        font-size: 0.9em;
+    }
+    .featured-deal .shop-link {
+        font-size: 1.1em;
+    }
+}
+
+/* Email input section responsive */
+@media screen and (max-width: 767px) { /* Adjusted breakpoint for consistency */
+    .join {
+        height: auto; /* Allow height to adjust to content */
+        padding: 40px 15px; /* Adjusted padding */
+    }
+    /* Adjusted .join h2 for the new image */
+    .join h2 {
+        font-size: 2.2em; /* Adjusted font size to match image */
+        font-weight: normal; /* Normal weight as per image */
+        margin-bottom: 20px;
+        color: white; /* White text as per image */
+        text-align: center; /* Centered as per image */
+        line-height: 1.2; /* Adjusted line height */
+        font-family: 'Noto Serif', serif; /* Changed font to Noto Serif as per new image */
+    }
+    .alignment {
+        display: flex; /* Ensure flexbox is active */
+        flex-direction: row; /* Changed to row for side-by-side layout */
+        width: 100%; /* Take full width of parent */
+        max-width: 350px; /* Adjusted max-width to match image */
+        justify-content: center; /* Center the input and button */
+        align-items: center; /* Align items vertically */
+        gap: 0; /* Removed gap to make them touch as in image */
+        padding: 0; /* Removed padding to make them touch edges of max-width */
+        border-radius: 5px; /* Added border-radius to the alignment container */
+        overflow: hidden; /* Hide overflow for rounded corners */
+    }
+    .box {
+        flex-grow: 1; /* Allow input to grow and fill space */
+        width: auto; /* Let flex-grow manage width */
+        height: 45px; /* Consistent height with the button */
+        margin-bottom: 0; /* Remove margin-bottom as they are side-by-side */
+        border: 1px solid #ccc; /* Lighter border as in image */
+        border-right: none; /* Remove right border to make it touch the button */
+        border-radius: 5px 0 0 5px; /* Rounded left corners only */
+        padding: 0 15px; /* Keep padding */
+        font-size: 1em; /* Adjusted font size for input text */
+        color: #333; /* Darker text color */
+        font-family: 'Segoe UI', sans-serif; /* Keep Segoe UI for input text */
+        /* Add placeholder style */
+        &::placeholder {
+            color: #888; /* Light gray color for placeholder */
+        }
+    }
+    .btn-primary {
+        width: auto; /* Let content determine width */
+        height: 45px; /* Consistent height with input */
+        padding: 10px 20px; /* Adjusted padding for button */
+        font-size: 1em; /* Adjusted font size for mobile button */
+        border-radius: 0 5px 5px 0; /* Rounded right corners only */
+        white-space: nowrap; /* Prevent text wrapping */
+        font-family: 'Segoe UI', sans-serif; /* Keep Segoe UI for button text */
+        background-color: #fd6e0a; /* Ensure button color is correct */
+        color: #fff; /* Ensure button text color is correct */
+        font-weight: bold; /* Make button text bold */
+    }
+}
+
+/* Responsive footer section */
+@media screen and (max-width: 767px) { /* Adjusted breakpoint for consistency */
+    .footer-container {
+        flex-direction: column; /* Stack footer sections */
+        align-items: flex-start; /* Align content to the left */
+        text-align: left;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .footer-logo p {
+        width: auto; /* Allow text to wrap naturally */
+        position: static; /* Remove fixed positioning */
+        text-align: left;
+        margin-right: 0; /* Remove any conflicting margins */
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        line-height: 1.8; /* Adjusted line height for readability */
+    }
+
+    .footer-links div {
+        align-items: flex-start;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .footer-social img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Media query for larger screens (e.g., desktop) */
+@media (min-width: 768px) {
+    /* Navbar reverts to desktop styles */
+    .navbar {
+        padding: 20px 150px;
+        justify-content: flex-start;
+    }
+    .logo img {
+        height: 70px;
+        width: 60px;
+    }
+    .logo span {
+        font-size: 24px;
+    }
+    .nav-right {
+        gap: 25px;
+        margin-left: auto;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin-left: auto;
+        margin-right: 25px;
+    }
+    .nav-links a {
+        padding: 0;
+    }
+    .cart span {
+        font-size: initial;
+    }
+
+    /* Banner reverts to desktop styles */
+    .banner {
+        flex-direction: row;
+        height: 461px;
+        padding: 20px;
+    }
+    .banner-text {
+        padding-top: 173px;
+        padding-left: 20px;
+        text-align: left;
+        width: auto;
+    }
+    .banner-text h1 {
+        font-size: 3em;
+    }
+    .banner-text p {
+        font-size: 1.2em;
+    }
+    .banner-image-one {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 50%;
+    }
+
+    /* Feature section reverts to desktop styles */
+    .feature-section {
+        margin-top: 150px;
+        margin-left: 60px;
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding: 60px 20px;
+    }
+    .image-container {
+        width: 600px;
+    }
+    .badge {
+        top: -130px;
+        right: -140px;
+        width: 300px;
+    }
+    .text-content {
+        margin-left: 20px;
+        margin-top: 130px;
+        text-align: left;
+    }
+    .text-content h2 {
+        font-size: 3rem;
+    }
+    .text-content ul {
+        padding-left: 50px;
+        margin-bottom: 50px;
+    }
+    .text-content li {
+        margin-bottom: 15px;
+        font-size: 22px;
+    }
+
+    /* Plant section reverts to desktop styles */
+    .plant-section h2 {
+        font-size: 2.5rem;
+    }
+    .plant-section .description {
+        font-size: 1rem;
+    }
+    .plant-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px 49px;
+        padding: 0 20px;
+    }
+    .none2 {
+        display: block; /* Show elements with 'none2' class on desktop */
+    }
+
+    /* Deals section reverts to desktop styles */
+    .latest-deals h1 {
+        font-size: 4em;
+    }
+    .subheader {
+        font-size: 1em;
+    }
+    .deals-container {
+        display: flex; /* Revert to flex for desktop */
+        flex-direction: row; /* Horizontal for desktop */
+        padding: 0;
+    }
+    .left-cards {
+        flex-basis: auto;
+        display: flex; /* Revert to flex for desktop */
+        flex-direction: column;
+    }
+    .deal-card {
+        width: 350px;
+        height: 200px;
+        max-width: 350px;
+    }
+    .featured-deal {
+        width: 600px;
+        height: 420px;
+        max-width: 600px;
+    }
+    .discount-text {
+        font-size: 1.2em;
+    }
+    .featured-deal .discount-text {
+        font-size: 2.2em;
+    }
+    .shop-link {
+        font-size: 1em;
+    }
+    .featured-deal .shop-link {
+        font-size: 1.3em;
+    }
+
+    /* Join section reverts to desktop styles */
+    .alignment {
+        flex-direction: row;
+        width: 830px;
+    }
+    .box {
+        width: 644px;
+        margin-bottom: 0;
+    }
+    .btn-primary {
+        width: 186px;
+    }
+
+    /* Footer section reverts to desktop styles */
+    .footer-container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 60px 40px;
+    }
+    .footer-logo p {
+        width: 250px;
+        position: static;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        line-height: 1.8; /* Adjusted line height for readability */
+    }
+
+    .footer-links div {
+        align-items: flex-start;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .footer-social img {
+        width: 28px;
+        height: 28px;
+    }
+}
